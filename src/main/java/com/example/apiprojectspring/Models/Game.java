@@ -16,6 +16,4 @@ public class Game {
     private String Genre;
     private int yearOfProd;
     private String Story;
-
-
 }

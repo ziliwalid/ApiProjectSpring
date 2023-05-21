@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/v1")
 public class GameController {
@@ -23,7 +24,7 @@ public class GameController {
     }
 
     @GetMapping("/Games/{id}")
-    public Game getEmployeeById(@PathVariable(value = "id") Long GameID)
+    public Game getGameById(@PathVariable(value = "id") Long GameID)
             throws ResourceNotFoundException {
         return gameRepository.findById(GameID)
                 .orElseThrow(() -> new ResourceNotFoundException("Game not found for this id :: " + GameID));
